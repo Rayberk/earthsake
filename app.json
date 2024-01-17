@@ -15,16 +15,44 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription": "This app uses location to identify your location during an earthquake.",
+        "NSLocationWhenInUseUsageDescription": "This app uses location to identify your location during an earthquake.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription ": "This app uses location to identify your location during an earthquake.",
+        "NSMotionUsageDescription": "This app uses motion sensors to identify your motions during an earthquake."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "HIGH_SAMPLING_RATE_SENSORS",
+        "ACCESS_BACKGROUND_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "INTERNET"
+      ]
     },
+    "permissions": [
+      "HIGH_SAMPLING_RATE_SENSORS",
+      "ACCESS_BACKGROUND_LOCATION",
+      "ACCESS_COARSE_LOCATION",
+      "ACCESS_FINE_LOCATION",
+      "INTERNET"
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Allow Earthsake to access your device motion."
+        }
+      ]
+    ]
   }
 }
